@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StudentManagementApi.Models
+namespace ModelsProject.Models
 {
     public class MockStudentRepository : IStudentRepository
     {

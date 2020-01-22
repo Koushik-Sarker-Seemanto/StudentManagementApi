@@ -2,10 +2,20 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="ServicesManager\ServicesManager.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="ModelsProject\obj\ModelsProject.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="ModelsProject\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="ModelsProject\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="ServicesManager\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="ServicesManager\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="ServicesManager\obj\ServicesManager.csproj.nuget.dgspec.json" />
     </ItemGroup>
 
 

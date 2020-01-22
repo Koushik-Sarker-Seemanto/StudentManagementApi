@@ -1,4 +1,4 @@
-namespace StudentManagementApi.Models
+namespace ModelsProject.Models
 {
     public class Student
     {

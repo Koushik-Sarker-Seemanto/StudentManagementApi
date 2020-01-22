@@ -10,7 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using StudentManagementApi.Models;
+using ModelsProject.Models;
+using ServicesManager.ServiceClasses;
+using ServicesManager.ServiceInterfaces;
+
 
 namespace StudentManagementApi
 {
@@ -27,6 +30,7 @@ namespace StudentManagementApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<IStudentManager, StudentManager>();
             services.AddSingleton<IStudentRepository, MockStudentRepository>();
         }
 

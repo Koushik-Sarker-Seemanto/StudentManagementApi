@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace StudentManagementApi.Models
+namespace ModelsProject.Models
 {
     public interface IStudentRepository
     {

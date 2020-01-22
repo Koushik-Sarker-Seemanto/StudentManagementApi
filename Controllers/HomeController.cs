@@ -5,7 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using StudentManagementApi.Models;
+using ModelsProject.Models;
+using ServicesManager.ServiceClasses;
+using ServicesManager.ServiceInterfaces;
+
 
 namespace StudentManagementApi.Controllers
 {
@@ -14,26 +17,26 @@ namespace StudentManagementApi.Controllers
     public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
-        private IStudentRepository _repository;
-        
 
-        public HomeController(ILogger<HomeController> logger, IStudentRepository repository)
+        private readonly IStudentManager _studentManager;
+
+        public HomeController(ILogger<HomeController> logger, IStudentManager studentManager)
         {
             _logger = logger;
-            this._repository = repository;
+            _studentManager = studentManager;
         }
         
         [HttpGet]
         public IActionResult GetAll()
         {
-            var tempStudents = _repository.GetAll();
+            List<Student> tempStudents = _studentManager.RetriveAll();
             return Ok(tempStudents);
         }
         
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            Student student = _repository.GetById(id);
+            Student student = _studentManager.RetriveById(id);
             return Ok(student);
         }
         
@@ -43,18 +46,16 @@ namespace StudentManagementApi.Controllers
             if (student == null)
                 return BadRequest();
             
-            _repository.Insert(student);
+            _studentManager.Create(student);
             return new CreatedAtActionResult(nameof(Get), "Home", new { id = student.Id }, student);
-            //return Ok(student);
-            //return CreatedAtAction(nameof(Get), new {Id = student.Id}, student);
         }
         [HttpPut("{id}")]
         public IActionResult Update(int id,[FromBody]Student student)
         {
-            Student st = _repository.GetById(id);
+            Student st = _studentManager.RetriveById(id);
             if (st != null)
             {
-                _repository.Update(student);
+                _studentManager.Update(student);
             }
 
             return Ok(student);
@@ -63,10 +64,10 @@ namespace StudentManagementApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            Student st = _repository.GetById(id);
+            Student st = _studentManager.RetriveById(id);
             if (st != null)
             {
-                _repository.Delete(id);
+                _studentManager.Delete(id);
             }
             return Ok(st);
         }
