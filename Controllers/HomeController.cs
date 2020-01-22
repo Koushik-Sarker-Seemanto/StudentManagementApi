@@ -27,49 +27,50 @@ namespace StudentManagementApi.Controllers
         }
         
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAllStudents()
         {
-            List<Student> tempStudents = _studentManager.RetriveAll();
+            List<Student> tempStudents = _studentManager.RetrieveAllStudents();
             return Ok(tempStudents);
         }
         
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult GetStudentById(int id)
         {
-            Student student = _studentManager.RetriveById(id);
+            Student student = _studentManager.RetrieveStudentById(id);
             return Ok(student);
         }
         
         [HttpPost]
-        public IActionResult Add([FromBody]Student student)
+        public IActionResult CreateStudent([FromBody]Student student)
         {
             if (student == null)
                 return BadRequest();
             
-            _studentManager.Create(student);
-            return new CreatedAtActionResult(nameof(Get), "Home", new { id = student.Id }, student);
+            Student newStudent = _studentManager.CreateStudent(student);
+            return Ok(newStudent);
+            //return new CreatedAtActionResult(nameof(GetStudentById), "Home", new { id = student.Id }, student);
         }
         [HttpPut("{id}")]
-        public IActionResult Update(int id,[FromBody]Student student)
+        public IActionResult UpdateStudent(int id,[FromBody]Student student)
         {
-            Student st = _studentManager.RetriveById(id);
+            Student st = _studentManager.RetrieveStudentById(id);
             if (st != null)
             {
-                _studentManager.Update(student);
+                _studentManager.UpdateStudent(student);
             }
 
             return Ok(student);
         }
     
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult DeleteStudent(int id)
         {
-            Student st = _studentManager.RetriveById(id);
-            if (st != null)
+            Student student = _studentManager.RetrieveStudentById(id);
+            if (student != null)
             {
-                _studentManager.Delete(id);
+                _studentManager.DeleteStudent(id);
             }
-            return Ok(st);
+            return Ok(student);
         }
         
     }

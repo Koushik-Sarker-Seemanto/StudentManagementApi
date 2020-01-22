@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagementApi", "Stu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesManager", "ServicesManager\ServicesManager.csproj", "{1A9E61AA-B7DA-492A-9EEF-8AA57F2C4EFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsProject", "ModelsProject\ModelsProject.csproj", "{E88D2307-4712-492D-A327-AC01A9EE3543}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsProject", "ModelsProject\ModelsProject.csproj", "{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,9 @@ Global
 		{1A9E61AA-B7DA-492A-9EEF-8AA57F2C4EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A9E61AA-B7DA-492A-9EEF-8AA57F2C4EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A9E61AA-B7DA-492A-9EEF-8AA57F2C4EFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E88D2307-4712-492D-A327-AC01A9EE3543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E88D2307-4712-492D-A327-AC01A9EE3543}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E88D2307-4712-492D-A327-AC01A9EE3543}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E88D2307-4712-492D-A327-AC01A9EE3543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

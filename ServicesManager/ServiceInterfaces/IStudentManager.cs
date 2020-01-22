@@ -5,11 +5,11 @@ namespace ServicesManager.ServiceInterfaces
 {
     public interface IStudentManager
     {
-        Student Create(Student student);
-        List<Student> RetriveAll();
-        Student RetriveById(int id);
-        Student Update(Student st);
-        void Delete(int id);
+        Student CreateStudent(Student student);
+        List<Student> RetrieveAllStudents();
+        Student RetrieveStudentById(int id);
+        Student UpdateStudent(Student st);
+        void DeleteStudent(int id);
 
     }
 }

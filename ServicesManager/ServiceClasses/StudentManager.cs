@@ -1,42 +1,43 @@
 using System.Collections.Generic;
 using ModelsProject.Models;
+using ServicesManager.Repositories;
 using ServicesManager.ServiceInterfaces;
 
 namespace ServicesManager.ServiceClasses
 {
     public class StudentManager: IStudentManager
     {
-        private IStudentRepository _repository;
+        private readonly IStudentRepository _repository;
         
         public StudentManager(IStudentRepository repository)
         {
             _repository = repository;
         }
         
-        public Student Create(Student student)
+        public Student CreateStudent(Student student)
         {
-            _repository.Insert(student);
+            _repository.CreateStudent(student);
             return student;
         }
 
-        public List<Student> RetriveAll()
+        public List<Student> RetrieveAllStudents()
         {
-            return _repository.GetAll();
+            return _repository.RetrieveAllStudents();
         }
 
-        public Student RetriveById(int id)
+        public Student RetrieveStudentById(int id)
         {
-            return _repository.GetById(id);
+            return _repository.RetrieveStudentById(id);
         }
 
-        public Student Update(Student st)
+        public Student UpdateStudent(Student st)
         {
-            return _repository.Update(st);
+            return _repository.UpdateStudent(st);
         }
 
-        public void Delete(int id)
+        public void DeleteStudent(int id)
         {
-            _repository.Delete(id);
+            _repository.DeleteStudent(id);
         }
     }
 }

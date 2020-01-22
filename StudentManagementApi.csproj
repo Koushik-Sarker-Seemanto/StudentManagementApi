@@ -16,6 +16,7 @@
       <_ContentIncludedByDefault Remove="ServicesManager\obj\project.assets.json" />
       <_ContentIncludedByDefault Remove="ServicesManager\obj\project.packagespec.json" />
       <_ContentIncludedByDefault Remove="ServicesManager\obj\ServicesManager.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="ModelsProject\bin\Debug\netcoreapp3.1\ModelsProject.deps.json" />
     </ItemGroup>
 
 
