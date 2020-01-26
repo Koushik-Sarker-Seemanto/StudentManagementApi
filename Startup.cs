@@ -40,7 +40,7 @@ namespace StudentManagementApi
             services.AddControllers();
             //services.AddSingleton(typeof(IGenericRepository<Student>),typeof(GenericRepository<Student>));
             //services.AddSingleton(typeof(IGenericFactory), typeof(GenericFactory));
-            services.AddSingleton(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddSingleton(typeof(IGenericRepository), typeof(GenericRepository));
 
             services.AddSingleton<IStudentManager, StudentManager>();
         }

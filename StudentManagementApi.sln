@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesManager", "Services
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelsProject", "ModelsProject\ModelsProject.csproj", "{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentManagementApi.Tests", "StudentManagementApi.Tests\StudentManagementApi.Tests.csproj", "{A0910952-9686-407F-AC17-04BB1B5436DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE4DFD2E-5FF1-4A76-BE95-2BFD712362E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0910952-9686-407F-AC17-04BB1B5436DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0910952-9686-407F-AC17-04BB1B5436DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0910952-9686-407F-AC17-04BB1B5436DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0910952-9686-407F-AC17-04BB1B5436DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

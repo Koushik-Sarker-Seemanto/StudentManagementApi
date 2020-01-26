@@ -2,12 +2,12 @@ using System.Collections.Generic;
 
 namespace ServicesManager.Repositories
 {
-    public interface IGenericRepository<T> where T: class
+    public interface IGenericRepository
     {
-        IEnumerable<T> GetAll();
-        T GetById(string id);
-        T Insert(T record);
-        T Delete(string id);
-        T Update(T record, string id);
+        IEnumerable<T> GetAll<T>();
+        T GetById<T>(string id);
+        T Insert<T>(T record);
+        T Delete<T>(string id);
+        T Update<T>(T record, string id);
     }
 }
