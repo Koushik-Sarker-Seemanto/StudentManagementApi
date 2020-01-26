@@ -6,10 +6,10 @@ namespace ServicesManager.ServiceInterfaces
     public interface IStudentManager
     {
         Student CreateStudent(Student student);
-        List<Student> RetrieveAllStudents();
-        Student RetrieveStudentById(int id);
+        IEnumerable<Student> RetrieveAllStudents();
+        Student RetrieveStudentById(string id);
         Student UpdateStudent(Student st);
-        void DeleteStudent(int id);
+        void DeleteStudent(string id);
 
     }
 }

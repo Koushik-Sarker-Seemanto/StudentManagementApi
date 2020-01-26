@@ -1,8 +1,11 @@
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace ModelsProject.Models
 {
     public class Student
     {
-        public int Id { get; set; }
+        [BsonId]
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Dept { get; set; }
         
@@ -14,7 +17,7 @@ namespace ModelsProject.Models
             
         }
 
-        public Student(int id, string name, string dept, string email, int batch)
+        public Student(string id, string name, string dept, string email, int batch)
         {
             this.Id = id;
             this.Name = name;

@@ -19,5 +19,9 @@
       <_ContentIncludedByDefault Remove="ModelsProject\bin\Debug\netcoreapp3.1\ModelsProject.deps.json" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MongoDB.Driver" Version="2.10.1" />
+    </ItemGroup>
+
 
 </Project>

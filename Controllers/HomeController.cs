@@ -29,12 +29,12 @@ namespace StudentManagementApi.Controllers
         [HttpGet]
         public IActionResult GetAllStudents()
         {
-            List<Student> tempStudents = _studentManager.RetrieveAllStudents();
+            IEnumerable<Student> tempStudents = _studentManager.RetrieveAllStudents();
             return Ok(tempStudents);
         }
         
         [HttpGet("{id}")]
-        public IActionResult GetStudentById(int id)
+        public IActionResult GetStudentById(string id)
         {
             Student student = _studentManager.RetrieveStudentById(id);
             return Ok(student);
@@ -51,7 +51,7 @@ namespace StudentManagementApi.Controllers
             //return new CreatedAtActionResult(nameof(GetStudentById), "Home", new { id = student.Id }, student);
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateStudent(int id,[FromBody]Student student)
+        public IActionResult UpdateStudent(string id,[FromBody]Student student)
         {
             Student st = _studentManager.RetrieveStudentById(id);
             if (st != null)
@@ -63,7 +63,7 @@ namespace StudentManagementApi.Controllers
         }
     
         [HttpDelete("{id}")]
-        public IActionResult DeleteStudent(int id)
+        public IActionResult DeleteStudent(string id)
         {
             Student student = _studentManager.RetrieveStudentById(id);
             if (student != null)

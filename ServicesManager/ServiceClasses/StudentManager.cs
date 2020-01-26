@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ModelsProject.Models;
+using MongoDB.Driver;
 using ServicesManager.Repositories;
 using ServicesManager.ServiceInterfaces;
 
@@ -7,37 +8,46 @@ namespace ServicesManager.ServiceClasses
 {
     public class StudentManager: IStudentManager
     {
-        private readonly IStudentRepository _repository;
+        // private readonly IStudentRepository _repository;
+        private readonly IGenericRepository<Student> _repository;
         
-        public StudentManager(IStudentRepository repository)
+        // private IMongoCollection<Student> _collection;
+        // private IMongoClient _client;
+        // private IMongoDatabase _database;
+        
+        public StudentManager( IGenericRepository<Student> repository)
         {
             _repository = repository;
         }
         
         public Student CreateStudent(Student student)
         {
-            _repository.CreateStudent(student);
+            // _repository.CreateStudent(student);
+            _repository.Insert(student);
             return student;
         }
 
-        public List<Student> RetrieveAllStudents()
+        public IEnumerable<Student> RetrieveAllStudents()
         {
-            return _repository.RetrieveAllStudents();
+            // return _repository.RetrieveAllStudents();
+            var temp = _repository.GetAll();
+            return temp;
         }
 
-        public Student RetrieveStudentById(int id)
+        public Student RetrieveStudentById(string id)
         {
-            return _repository.RetrieveStudentById(id);
+            return _repository.GetById(id);
         }
 
         public Student UpdateStudent(Student st)
         {
-            return _repository.UpdateStudent(st);
+            string id = st.Id;
+            return _repository.Update(st, id);
         }
 
-        public void DeleteStudent(int id)
+        public void DeleteStudent(string id)
         {
-            _repository.DeleteStudent(id);
+            _repository.Delete(id);
         }
     }
 }
