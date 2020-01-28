@@ -11,11 +11,9 @@ namespace StudentManagementApi.UnitTests
 {
     public class GenericRepositoryTests
     {
-        
         public readonly IGenericRepository MockRepository;
         public GenericRepositoryTests()
         {
-            // create some mock products to play with
             IList<Student> students = new List<Student>
             {
                 new Student { Id = "10", Name = "koushik",
@@ -25,14 +23,10 @@ namespace StudentManagementApi.UnitTests
                 new Student { Id = "12", Name = "rahim",
                     Dept = "swe", Email = "k@gmail.com", Batch = 2016}
             };
- 
-            // Mock the Products Repository using Moq
             Mock<IGenericRepository> mockRepo = new Mock<IGenericRepository>();
 
-            // Return all the products
             mockRepo.Setup(e => e.GetAll<Student>()).Returns(students);
 
-            // return a product by Id
             mockRepo.Setup(e => e.GetById<Student>(
                 It.IsAny<string>())).Returns((string id) => students.Single(x => x.Id == id));
             
@@ -63,9 +57,7 @@ namespace StudentManagementApi.UnitTests
 
             this.MockRepository = mockRepo.Object;
         }
-        
-        
-        
+
         [Fact]
         public void GetById_Mock()
         {
@@ -132,85 +124,5 @@ namespace StudentManagementApi.UnitTests
             Assert.Equal(jsonExpected, jsonActual);
         }
         
-        
-        
-        
-        
-        //
-        // [Fact]
-        // public void Insert_Correctly()
-        // {
-        //     var student = new Student("9","s","swe","k@gmail.com",2016);
-        //     var expected = student;
-        //     IStudentDatabaseSettings settings = new StudentDatabaseSettings();
-        //     settings.ConnectionString = "mongodb://localhost:27017";
-        //     settings.DatabaseName = "StudentDb";
-        //     
-        //     var repository = new GenericRepository(settings);
-        //     var actual = repository.Insert<Student>(student);
-        //     
-        //     var jsonActual = actual.ToJson();
-        //     var jsonExpected = expected.ToJson();
-        //     Assert.Equal(jsonActual, jsonExpected);
-        //     
-        // }
-        //
-        //
-        // [Fact]
-        // public void GetById_Correctly()
-        // {
-        //     var student = new Student("5","k","swe","k@gmail.com",2016);
-        //     var expected = student;
-        //     IStudentDatabaseSettings settings = new StudentDatabaseSettings();
-        //     settings.ConnectionString = "mongodb://localhost:27017";
-        //     settings.DatabaseName = "StudentDb";
-        //     
-        //     var repository = new GenericRepository(settings);
-        //     Student actual = repository.GetById<Student>("5");
-        //     // Assert.Equal(expected, actual);
-        //     
-        //     var jsonActual = actual.ToJson();
-        //     var jsonExpected = expected.ToJson();
-        //     Assert.Equal(jsonActual, jsonExpected);
-        //     
-        //     
-        // }
-        //
-        // [Fact]
-        // public void Update_Correctly()
-        // {
-        //     var student = new Student("4","s","swe","k@gmail.com",2016);
-        //     var expected = student;
-        //     IStudentDatabaseSettings settings = new StudentDatabaseSettings();
-        //     settings.ConnectionString = "mongodb://localhost:27017";
-        //     settings.DatabaseName = "StudentDb";
-        //     
-        //     var repository = new GenericRepository(settings);
-        //     Student actual = repository.Update<Student>(student,"4");
-        //     // Assert.Equal(expected, actual);
-        //     
-        //     var jsonActual = actual.ToJson();
-        //     var jsonExpected = expected.ToJson();
-        //     Assert.Equal(jsonActual, jsonExpected);
-        //     
-        // }
-        //
-        // [Fact]
-        // public void Delete_Correctly()
-        // {
-        //     var student = new Student("7","s","swe","k@gmail.com",2016);
-        //     var expected = student;
-        //     IStudentDatabaseSettings settings = new StudentDatabaseSettings();
-        //     settings.ConnectionString = "mongodb://localhost:27017";
-        //     settings.DatabaseName = "StudentDb";
-        //     
-        //     var repository = new GenericRepository(settings);
-        //     var actual = repository.Delete<Student>("7");
-        //     var jsonActual = actual.ToJson();
-        //     var jsonExpected = expected.ToJson();
-        //     Assert.Equal(jsonActual, jsonExpected);
-        //     // Assert.True(expected.Equals(actual));
-        // }
-        //
     }
 }
