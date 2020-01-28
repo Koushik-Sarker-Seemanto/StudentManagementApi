@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="ServicesManager\ServicesManager.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="ModelsProject\obj\ModelsProject.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="ModelsProject\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="ModelsProject\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="ServicesManager\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="ServicesManager\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="ServicesManager\obj\ServicesManager.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="ModelsProject\bin\Debug\netcoreapp3.1\ModelsProject.deps.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.UnitTests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.UnitTests\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.UnitTests\obj\StudentManagementApi.UnitTests.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\appsettings.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\ModelsProject\bin\Debug\netcoreapp3.1\ModelsProject.deps.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\ModelsProject\obj\ModelsProject.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\ModelsProject\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\ModelsProject\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\Properties\launchSettings.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\ServicesManager\bin\Debug\netcoreapp3.1\ServicesManager.deps.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\ServicesManager\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\ServicesManager\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\ServicesManager\obj\ServicesManager.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\StudentManagementApi.Tests.deps.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\StudentManagementApi.Tests.runtimeconfig.dev.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\StudentManagementApi.Tests.runtimeconfig.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\StudentManagementApi.Tests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\StudentManagementApi.Tests\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\bin\Debug\netcoreapp3.1\StudentManagementApi.Tests\obj\StudentManagementApi.Tests.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="StudentManagementApi.Tests\obj\StudentManagementApi.Tests.csproj.nuget.dgspec.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      
+      <PackageReference Include="MongoDB.Driver" Version="2.10.1" />
+      
+    </ItemGroup>
+
+
+</Project>
